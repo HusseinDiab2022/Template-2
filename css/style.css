@@ -1,0 +1,361 @@
+/* 1- GENERAL STYLES
+   2- SECTIONS
+     2.0 HEADER SECTION
+     2.1 MAIN SECTION
+     2.2 CATEGORY SECTION
+     2.3 DISCOUNT SECTION
+     2.4 DELIVARY SECTION
+     2.5 FEATURED SECTION
+*/
+/* 1- GENERAL STYLES .............................................................................. 1- GENERAL STYLES */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family:"pt-sans",sans-serif;
+    background: -webkit-radial-gradient(50% 50%, farthest-corner, white, rgb(219, 201, 178));
+    background-repeat: no-repeat;
+}
+.container{
+    width: 80%;
+    margin: auto;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+li{
+    display: inline-block;
+}
+.section-title-parent{
+    margin-top: 40px;
+    margin-bottom: 25px;
+}
+.section-title{
+    text-align: center;
+    font-size: 30px;
+}
+.section-title-line, .header-cart::after, .category-btn, .discount-items-marketing ul li, .overlay-li{
+    background-color: rgb(123, 82, 68);
+}
+.section-title-line{
+    width: 100px;
+    height: 2px;
+    margin: auto;
+    margin-top: 10px;
+    transition: .5s;
+}
+.section-title-parent:hover .section-title-line{
+    transform: scaleX(1.5);
+}
+.section-para{
+    color: rgb(148, 114, 85);
+}
+.items-parent, .discount-items-parent{
+    display: flex;
+    justify-content: space-between;
+}
+/* 2.0 Header Section ............................................................................ 2.0 Header Section */
+header{
+    height: 132px;
+    padding: 28px 0px;
+}
+.header-item-logo{
+    margin-top: 20px;
+    width: 150px;
+    height: 36px;
+}
+.header-ul-li, .header-ul-icons{
+    margin-top: 20px;
+    margin-left: 5px;
+    font-size: 16px;  
+    font-weight: bold; 
+}
+.header-ul-link{
+    padding: 8.5px;
+    color: rgb(123, 82, 68);
+    position: relative;   
+}
+.header-ul-li{
+    padding: 8px 0px;
+    margin-right: 16px;
+}
+.header-ul-link::before, .header-ul-link::after{
+    content:"";
+    position: absolute;
+    border-style: solid; 
+    left: 0;
+    top:0; 
+    transition: transform 0.2s;
+}
+.header-ul-link::before{
+    border-width: 0 2px;
+    height: 100%; 
+    width: 95%;
+    transform: scale3d(1,0,1);
+}
+.header-ul-link:hover::before{
+    transform: scale3d(1,1,1);
+}
+.header-ul-link::after{
+    border-width: 2px 0;
+    height: 91%; 
+    width: 98%;
+    transform: scale3d(0,1,1);
+    transform-origin: left;
+}
+.header-ul-link:hover::after{
+    transform: scale3d(1,1,1);
+    transition-delay: .2s;
+}
+.header-icon-li{
+    font-size: 30px;
+    margin-right: 15px;
+    color: rgb(32, 32, 32);
+}
+.header-li-table{
+    position: relative;
+}
+.header-table{
+    position: absolute;
+    top: 37px;
+    left: 0;
+    border: 2px solid rgb(123, 82, 68);    
+    display: flex;
+    padding: 15px;
+    font-weight: 100;
+    transform: scale(0);
+    background: -webkit-radial-gradient(50% 50%, farthest-corner, white, rgb(240, 221, 200));
+    z-index: 2;
+}
+.header-table ul li a{
+    color: rgb(123, 82, 68);
+}
+.header-li-table:hover .header-table{
+    transform: scale(1);
+    transition: .5s;
+}
+.header-table ul{
+    width: 100px;
+    line-height: 30px;
+    margin-right: 35px;
+}
+.top-table a{
+    display: block;
+    border-bottom: 1px dotted rgb(123, 82, 68);
+    margin-bottom: 10px;
+}
+.header-cart{
+    margin-right: 13px;
+    position: relative;
+}
+.header-cart::after{
+    content: "0";
+    position: absolute;
+    top: 14px;
+    left: 33px;
+    font-size: 13px;
+    font-weight: 100;
+    color: white;
+    width: 15px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 22px;
+}
+/* 2.1 Main Section ................................................................................ 2.1 Main Section */
+main img{
+    width: 100%;
+    height: 472px;
+}
+/* 2.2 Category Section ........................................................................ 2.2 Category Section */
+.category-item{
+    width: 24.25%;
+    position: relative;
+}
+.category-item img{
+    width: 100%;
+    margin-bottom: 25px;
+}
+.category-item p{
+    font-weight: 100;
+}
+.category-btn{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    border: none;
+    visibility: hidden;
+}
+.category-item:hover .category-btn{
+    visibility: visible;
+}
+/* 2.3 Discount Section ........................................................................ 2.3 Discount Section */
+.discount-items-parent{
+    margin-top: 30px;
+}
+.discount-items-marketing{
+    width: 50%;
+    height: 300px;
+    background: -webkit-radial-gradient(50% 50%, circle, white, rgb(216, 198, 174));
+    position: relative;
+    padding: 20px;
+}
+.discount-div-top{
+    display: flex;
+    margin-bottom: 20px;
+}
+.discount-icon{
+    font-size: 45px !important;
+    color: rgb(123, 82, 68);
+    margin-right: 5px;
+}
+.discount-items-marketing p{
+    line-height: 27px;
+}
+.discount-items-marketing ul{
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+}
+.discount-items-marketing ul li{
+    width: 50px;
+    height: 2px;
+    margin-left: 10px;
+}
+.discount-item{
+    width: 23%;
+    background-size: cover;
+    transition: .5s;
+    padding: 20px 15px;
+    font-size: 19px;
+}
+.d1{
+    background-image: url(../images/discount-banner1.jpeg);
+}
+.d2{
+    background-image: url(../images/discount-banner2.jpeg);
+}
+.discount-item:hover{
+    transform: scale(1.1,1.1);
+}
+/* 2.4 Delivary Section ........................................................................ 2.4 Delivary Section */
+.delivary-items-parent{
+    margin-top: 30px;
+    margin-bottom: 55px;
+    display: flex;
+}
+.delivary-item{
+    width: 25%;
+    height: 92px;
+    text-align: center;
+    font-size: 15px;
+}
+.di{
+    border-left: 1px solid rgb(123, 82, 68);
+}
+.delivary-item-img{
+    height: 55px;
+    overflow: hidden;
+}
+.item-image{
+    transition: .5s;
+}
+.im1{
+    transform: translateY(4px);
+}
+.delivary-item:hover .im1{
+    transform: translateY(-89px);
+}
+.im2{
+    transform: translateY(-182px);
+}
+.delivary-item:hover .im2{
+    transform: translateY(-274px);
+}
+.im3{
+    transform: translateY(-366px);
+}
+.delivary-item:hover .im3{
+    transform: translateY(-458px);
+}
+.im4{
+    transform: translateY(-551px);
+}
+.delivary-item:hover .im4{
+    transform: translateY(-643px);
+}.im5{
+    transform: translateY(-738px);
+}
+.delivary-item:hover .im5{
+    transform: translateY(-830px);
+}
+/* 2.5 Featured Section ........................................................................ 2.5 Featured Section */
+.FeatS5{
+    margin-top: 80px;
+    margin-bottom: 35px;
+}
+.featured-title-ul{
+    text-align: center;
+    margin-left: -35px;
+    margin-bottom: 40px;
+}
+.featured-title-ul li{
+    margin-left: 36px;
+}
+.featured-item{
+    width: 32%;
+    line-height: 27px;
+}
+.featured-image{
+    position: relative;
+}
+.featured-image img{
+    width: 100%;
+    height: 450px;
+}
+.overlay{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: .9;
+    transform: scaleX(0);
+    transition: .25s;
+}
+.featured-item:hover  .overlay{
+    transform: scaleX(1);
+}
+.featured-overlay-ul{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.featured-overlay-ul li{
+    width: 39px;
+    height: 39px;
+    text-align: center;
+    color: white;
+    line-height: 39px;
+    margin-right: .5px;
+}
+.featured-ul-stars{
+    font-size: 13px;
+}
+.featured-li-star{
+    color: rgb(170, 135, 105);
+}
+.fip2{
+    margin: 25px 0px 75px 0px;
+}
